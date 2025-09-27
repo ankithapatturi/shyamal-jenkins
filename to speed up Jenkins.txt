@@ -1,0 +1,62 @@
+to speed up Jenkins 
+cd /var/lib/Jenkins
+ll
+vim copy config location from ll
+change ip address in vim
+systemctl restart Jenkins
+......................................
+.....................................
+to increase size in Jenkins
+df -h
+ sudo mount -o remount,size=2G /temp
+df -h
+ vim /etc/fstab
+tmpfs /tmp tmpfs defaults,noatime,mode=1777,size=2G 0 0--inside vim
+systemctl daemon-reload
+reboot
+...................................
+..................................
+in dev instance 
+yum install git -y
+ssh-keygen
+cat /root/.ssh/id_rsa.pub
+copy code and goto GitHub and create ssh key
+............................
+............................
+ yum install maven -y
+yum update –y
+wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+yum upgrade
+yum install java-21-amazon-corretto -y
+yum install jenkins -y
+systemctl enable Jenkins
+systemctl start Jenkins
+need to open Jenkins with ip address and port number
+cat /link when we open Jenkins
+yum install maven -y
+mvn -v
+yum install git -y
+yum install java* -y
+yum install wget -y
+go to GitHub and select webhooks
+add webhooks
+share jenkin url and type /github-webhook/
+content type application/json
+secrect-goto Jenkins profile-security-generate token and copy into secret of GitHub
+save token on Jenkins
+add webhook and refresh
+goto junkins -settings-plugins
+install maven integration and GitHub integration and restart
+goto terminal
+yum install git -y
+yum install maven -y
+mvn -v
+copy java path
+copy maven path
+goto jenkin tools
+paste
+jenkins-new-maven project-git-goto GitHub and copy https
+keep repo as main
+build now
