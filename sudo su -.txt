@@ -1,0 +1,37 @@
+sudo su -
+cat /etc/passwd
+useradd pooja
+cat /etc/passwd
+cat /etc/passwd | grep -i pooja
+tail /etc/passwd
+tail /etc/shadow
+su -pooja
+pwd
+whoami
+exit
+cat /etc/group | grep -i wheel
+cat /etc/group | grep -i nobody
+vim /etc/group
+su -pooja
+id
+sudo su-
+usermod -aG wheel pooja
+su -pooja
+id
+exit
+useradd --help
+useradd sweta
+cat /etc/passwd | grep -i swetha
+useradd -u 100 arpit
+cat /etc/passwd | grep -i arpit
+passwd arpit......when she needs to modify
+su -pooja
+sudo su -
+whereis useradd
+copy /usr/sbin/useradd
+vim /etc/sudoers
+pooja ALL(ALL) paste copied
+sudo useradd jk
+sudo su -pooja
+useradd barbosa
+
