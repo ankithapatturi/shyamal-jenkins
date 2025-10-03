@@ -1,0 +1,67 @@
+buckets
+goto ec2 and search s3
+create a bucket
+block all public(untick)
+accept i acknowledge
+click on that name and upload 1-2 files
+add file upload
+click on any obj url--we get error when we paste
+click on obj permissions it will be disable
+to enable bucket permissions-obj ownership edit-acls enabled-acknowledge
+edit read read enable
+copy and paste url in browser
+.....................................
+....................................
+.....................................
+.....................................
+create duplicate ohio region and create a bucket in ohio
+search ec2-launch new instance,keypair-efs-server-key,n/w settings,subnet-no need,10,gp3--launch
+connect in terminal
+sudo su -
+cat /etc/os-release
+df -h
+now create a duplicate ohio region and search IAM
+left-users-create user
+name-s3-user---next
+select attach policies directly
+permission policies--s3 full---next
+
+
+
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  unzip awscliv2.zip
+ sudo ./aws/install
+  aws configure
+***goto iam user and goto security create access key using CLI region-us-east-2a format-table
+  ls -a
+  cd .aws/
+  ll
+  cat config
+  cat credentials
+  cd
+  sudo yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
+   git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+     cd s3fs-fuse/
+     ll
+     ./autogen.sh
+     ./configure --prefix=/usr --with-openssl
+     make
+     sudo make install
+     cd
+     which s3fs
+     touch /etc/passwd-s3fs
+     ll -d /etc/passwd-s3fs
+     chmod 640 /etc/passwd-s3fs
+     ll -d /etc/passwd-s3fs
+     vim /etc/passwd-s3fs
+put access key and secret key and save
+     s3fs {Enter your bucket name -- No Braces required} /mnt -o passwd_file=/etc/passwd-s3fs
+     df -h
+     cd /mnt/
+     ll
+     touch sush.txt{1..10}
+ll
+now the file will be available in bucket
+
+
