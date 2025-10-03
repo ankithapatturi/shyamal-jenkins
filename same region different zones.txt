@@ -1,0 +1,31 @@
+same region different zones
+create ec2 instance launch 10gb and gp2
+leftside volumes and name it as root vol
+create another volume with size 5gb and name it as data one
+attach data vol to instance
+terminal
+sudo su -
+ df -h
+ mkdir /data
+lsblk
+mkfs.ext4 /dev/nvme1n1
+mount /dev/nvme1n1 /data
+cd /data
+ touch pooja.txt{1..100}
+ll
+create another instance zone as 1b 8gb and gp2
+terminal
+sudo su -
+df -h
+left side snapshots--create vol id 1a data vol
+actions create volume from snapshot gp2
+zone 1b create vol
+goto volumes and name it as snap vol
+select snap vol-actions-attach-select instance-id-create
+goto second terminal
+lsblk
+mkdir /Sanjaya
+mount /dev/nvme1n1 /sanjaya/
+ cd /Sanjaya
+ll
+pooja txt file will be available
