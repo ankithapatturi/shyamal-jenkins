@@ -1,0 +1,27 @@
+loadbalancer:
+launch a instance with webserver amazonlinux keypair-new 1a new sec allow http
+another                web-2     redhat                  1d
+                        3         ubuntu                 1d
+                        4         redhat                 1d
+1.yum install httpd -y
+cd /var/www/html
+echo "hiii" >index.html
+ll
+systemctl start httpd
+systemctl enable httpd
+curl http://localhost
+2.dnf install httpd -y
+3.apt install -y
+apt install apache2 -y
+4.cat /etc/os-release
+yum install httpd -y
+copy public ip and portno
+goto target groups-create-choose a target -instances-name it
+register targets-select all machines-create
+left:loadbalancer -application name-my-elb
+avail zone--tick a,b,c,d
+sec group select
+target select
+DNS url copy and paste in browser
+goto target group register all including pending-register
+now cpy dns url and paste in browser
