@@ -1,0 +1,54 @@
+VPC PEERING
+duplicate session of vpc and switch to ohio
+create vpc
+create subnet-prod-web-subnet
+zone-2a
+CIDR-20.0.0.0/24-create
+another subnet-prod-db-subnet
+zone-2b
+20.0.1.0/24-create
+internet gateways-create-prod-igw--attach
+route table-prod-public-rt-vpc select-create
+edit route-add route-0.0.0.0-igw-save
+subnet associations-select prod-web
+again launch one more ec2
+ohio-server-keypair-new-prod-vpc-key
+n/w-vpc select-enable-auto assign
+subnet-web-subnet
+sec-group-prod-vpc
+port http,anywhere-launch
+security of instance-edit inbound rules and add icmp-ipv4-save
+goto vpc of n.virginia
+left-peering connection
+create-devops-to-prod,vpc-devops-vpc
+same acc-another region ohio
+to share acc id goto ohio vpc and copy acceptor id
+create peering
+goto peering connection of ohio and accept peering
+goto n.virginia route table public ip-edit-add
+20.0.0.0/16--peering connection -save
+ohio-route table-prod-publicrt-edit-10.0.0.0/16-peering connection-save
+
+N.virginia                                                 ohio
+                                                      1. ping private id of n.v
+2.ping private ip of ohio                                
+                                                       3.vim /etc/ssh/sshd_config
+                                                        permit root login yes
+                                                        passwd authentication yes
+                                                        systemctl restart sshd
+                                                        systemctl enable sshd
+4.vim---same
+cat >training.txt
+this is my data
+ctrl+d
+ll                                                      5.passwd root
+                                                        redhat
+6.scp training.txt root@20.0.0.99:/tmp                  7.cd /tmp
+                                                        ll
+                                                       8.cat >lti.txt
+                                                        hiii
+                                                         ll
+9.passwd root
+cd/mnt/
+ll
+                                                       10.scp lti.txt root@10.0.0.165:/mnt
