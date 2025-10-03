@@ -1,0 +1,55 @@
+VPC UPTO NAC GATEWAY..
+search vpc
+vpc only
+name-devops-vpc
+cidr-10.0.0.0/16
+goto internet gateway---devops-agw--create
+goto subnets--create-devops-vpc-select
+subnet settings name-public-subnet-1a-10.0.0.0/16
+CIDR-10.0.0.0/24--create
+create another subnet ---name it as private-subnet-10.0.0.0/16
+CIDR-10.0.1.0/24--1b-create
+take duplicate ec2 instance
+launch-webserver-new keypair-custom-vpc-key
+n/w settings-edit vpc devops-vpc
+1a---auto assign -enable
+sec group-devops-sg
+ssh,http,anywhere--launch
+another instance--db-server
+keypair-custom-vpc
+vpc-devops-vpc auto assign disable subnet 1b
+sec group-existing-create
+goto first tab left side internet gateways-select-attach igw-devops-vpc
+route table --create-name it as public-rt
+select vpc and create
+edit route add route
+target-local-igw-select and save changes
+goto terminal of webserver
+yum install httpd -y
+rpmquery httpd
+cd /var/www/html
+echo "this is server" >index.html
+ll
+cd
+systemctl start httpd
+cpy address and port no 80 in browser
+sec of db server security rules--add all acmp ipv4-save
+goto terminal
+ping private ip of webserver
+ping private ip of db server
+goto key folder--ctrl+a,ctrl+c
+vim custom-vpc-key.pem
+paste the key here..
+ll -d custom-vpc-key.pem
+chmod 400 custom-vpc-key.pem
+ssh -i custom-vpc-key.pem ec2-user@private ip of db
+ping google.com
+vpc-NATgateway-create
+devops-ngw-subnet-public
+connectivity type-public-allocate eip
+goto route tables-create-name-private-subnet
+vpc-devops-vpc-create
+edit routw-add-local-NATgateway-select 0.0.0.0-create
+edit subnetassociate-select private-save
+open terminal ping will work
+
