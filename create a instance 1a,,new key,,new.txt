@@ -1,0 +1,15 @@
+create a instance 1a,,new key,,new sec group add nfs port 2049
+create another 1b,existing
+connect to terminal both
+rpmquery nfs-utils
+mkdir /data
+create duplicate tab
+eps search
+create file sysname it 
+bottom there will be network and change sec our our and remove remaining
+save and attach 
+mount via DNS
+copy second link and paste in both terminals
+with our file
+touch data.txt{1..5}
+ll
