@@ -1,0 +1,20 @@
+DIFF REGIONS DIFF ZONES
+ones refer same region diff zone
+delete dev server instance in that
+create duplicate session-ohio
+copy snapshot from N.virginia and select destination--us-east-2
+now we can see snapshot in ohio also
+create and convert snapshot inti disk
+actions-create
+launch instance-new keypair,subnet-2a
+sec group-create new,launch
+select instance and left side goto volumes attach vol---dev/ssh--attach
+goto terminal fresh and paste ssh and connect
+sudo su -
+dg -h
+lsblk
+mkdir /prod-data
+mount /dev/nvme1n1 /prod-data/
+cd /prod-data/
+ll
+cd
