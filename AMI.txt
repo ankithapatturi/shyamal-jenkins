@@ -1,0 +1,58 @@
+AMI
+
+
+launch instance-dev-server
+keypair-new
+n/w settings-1a
+sec group-devops-sg
+desc:allow htp and ssh
+inbound rules--add http
+size-10,gp2
+sudo su -
+hostnamectl st-hostname dev-server.example.com
+bash
+cat /etc/os-release
+ip a s
+yum install httpd -y
+cd /var/www/html
+echo "this is my webserver" >index.html
+ll
+cat index.html
+cd
+systemctl start httpd
+systemctl enable httpd
+public ip and port num in browser--prompt will be displayed
+reboot
+connect again
+sudo su -
+
+need to create AMI
+yum install vsftpd -y
+yum install nfs-utils -y
+yum install cifs-utils -y
+yum install tree -y
+yum install dns* -y
+touch Sanjaya.txt{1..100}
+cd /tmp/
+touch pooja.txt{1..10}
+ll
+cd
+ec2---click on actions--img&template-create image--name-devops-img
+desc:this is our custom img-untick on reboot instance
+tag keyname--value--devops-image
+left side AMI'S-click-status of img created
+select AMI and launch it
+name=test-server
+so when we launch ec2 wee see option
+AMIs select  name-test-server us-1b
+keypair login-dracula-server-key
+subnet,sec group-dracula-sg
+public id copy and paste in browser of test server
+......
+IN N.vir click on AMI -actions-copy ami-copy ami
+open duplicate session and region ohio
+click and launch AMI-name=ohio-server
+keypair name=prod-server-ohio
+n/w settings-2a,sec group=new and name it
+sec group-http and type=anywhere size=10,gp3
+now click ohio public id and display then the same prompt wil be displayed
